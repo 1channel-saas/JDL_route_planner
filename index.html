@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Route Plan</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         margin: 0; padding: 0; display: flex; flex-direction: column;
+         height: 100vh; color: #222; }
+  header { padding: 14px 20px; background: #f7f7f7; border-bottom: 1px solid #ddd;
+           display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  h1 { font-size: 16px; font-weight: 600; margin: 0 16px 0 0; }
+  label { font-size: 13px; color: #555; }
+  select { padding: 6px 10px; font-size: 14px; border: 1px solid #ccc;
+           border-radius: 4px; background: white; min-width: 180px; }
+  .stats { font-size: 12px; color: #666; flex-basis: 100%; margin-top: 4px; }
+  .stats b { color: #222; }
+  iframe { flex: 1; border: none; background: white; }
+  .placeholder { display: flex; align-items: center; justify-content: center;
+                 flex: 1; color: #888; font-size: 14px; font-style: italic;
+                 background: #fafafa; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Route Plan</h1>
+  <label>Salesperson <select id="sp"></select></label>
+  <label>Date <select id="date"></select></label>
+  <div class="stats" id="stats"></div>
+</header>
+<iframe id="map" src="about:blank"></iframe>
+<div id="placeholder" class="placeholder" style="display:none">
+  <span id="placeholder-msg"></span>
+</div>
+
+<script>
+let schedule = null;
+
+async function init() {
+  const res = await fetch('data/schedule.json');
+  schedule = await res.json();
+  document.title = `Route Plan: ${schedule.window.start} to ${schedule.window.end}`;
+  populateSpDropdown();
+  applyHash();
+  document.getElementById('sp').addEventListener('change', () => {
+    populateDateDropdown(document.getElementById('sp').value);
+    update();
+  });
+  document.getElementById('date').addEventListener('change', update);
+  window.addEventListener('hashchange', applyHash);
+}
+
+function populateSpDropdown() {
+  document.getElementById('sp').innerHTML = schedule.salespersons
+    .map(s => `<option value="${s.id}">${s.name} (${s.state})</option>`)
+    .join('');
+}
+
+function populateDateDropdown(spId) {
+  const sp = schedule.salespersons.find(s => s.id === spId);
+  document.getElementById('date').innerHTML = sp.days.map(d => {
+    let label;
+    if (d.blocked) label = `${d.date} (${d.weekday}) - BLOCKED: ${d.block_reason}`;
+    else if (d.stops === 0) label = `${d.date} (${d.weekday}) - no visits`;
+    else label = `${d.date} (${d.weekday}) - ${d.stops} stops, ${d.km} km`;
+    return `<option value="${d.date}">${label}</option>`;
+  }).join('');
+}
+
+function update() {
+  const spId = document.getElementById('sp').value;
+  const dateVal = document.getElementById('date').value;
+  const sp = schedule.salespersons.find(s => s.id === spId);
+  const day = sp.days.find(d => d.date === dateVal);
+
+  const iframe = document.getElementById('map');
+  const ph = document.getElementById('placeholder');
+  const stats = document.getElementById('stats');
+
+  if (!day) return;
+
+  if (day.blocked) {
+    iframe.style.display = 'none';
+    ph.style.display = 'flex';
+    document.getElementById('placeholder-msg').textContent =
+      `BLOCKED day - ${day.block_reason}`;
+  } else if (day.stops === 0) {
+    iframe.style.display = 'none';
+    ph.style.display = 'flex';
+    document.getElementById('placeholder-msg').textContent =
+      'No visits scheduled for this day.';
+  } else {
+    ph.style.display = 'none';
+    iframe.style.display = 'block';
+    iframe.src = `maps/${spId}/${dateVal}.html`;
+  }
+
+  const t = sp.totals;
+  stats.innerHTML =
+    `<b>${sp.name}</b> month totals: ` +
+    `${t.visits} visits, ${t.km} km, ${t.dropped} dropped, ` +
+    `${t.active_days} active / ${t.blocked_days} blocked days. ` +
+    (day.stops ? `<b>Today:</b> ${day.stops} stops, ${day.km} km.` : '');
+
+  window.location.hash = `sp=${spId}&date=${dateVal}`;
+}
+
+function applyHash() {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  const spSelect = document.getElementById('sp');
+  const dateSelect = document.getElementById('date');
+  if (params.has('sp') && schedule.salespersons.find(s => s.id === params.get('sp'))) {
+    spSelect.value = params.get('sp');
+  }
+  populateDateDropdown(spSelect.value);
+  if (params.has('date')) dateSelect.value = params.get('date');
+  update();
+}
+
+init();
+</script>
+</body>
+</html>

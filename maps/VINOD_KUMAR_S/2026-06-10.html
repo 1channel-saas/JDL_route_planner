@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_66818ee91a0326ba373bd119b079cd88 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_66818ee91a0326ba373bd119b079cd88" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_66818ee91a0326ba373bd119b079cd88 = L.map(
+                "map_66818ee91a0326ba373bd119b079cd88",
+                {
+                    center: [13.036295265, 77.63290263333333],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_43bc1281be697fb47ab0de0e889152d2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_43bc1281be697fb47ab0de0e889152d2.addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var poly_line_2dcf48dff2ae49f9f26e2a456975d078 = L.polyline(
+                [[12.9699645, 77.7498641], [12.9895461, 77.7278644], [13.0127, 77.6476], [12.9772062, 77.64071], [12.9611245, 77.5999773], [12.9718287, 77.59594], [13.01287088, 77.55345], [13.0349595, 77.5680005], [13.0452832, 77.6012691], [13.1386, 77.56978], [13.1218867, 77.6309033], [13.1995729, 77.7094729]],
+                {"bubblingMouseEvents": true, "color": "#1976D2", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1976D2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.55, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var marker_90882b00638acbc8d750a1ce6c0891d1 = L.marker(
+                [12.9699645, 77.7498641],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_7f9ec37bff726737127055b3fe8ce1ea = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e1\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_a1e00f3b3ae9a7dacabe2d9f08cdebf1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2ca3e55c3eb6ff874344ce06e04b391c = $(`<div id="html_2ca3e55c3eb6ff874344ce06e04b391c" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 1: Nandini Bar & Restaurant</b><br><span style='color:#666'>ID:</span> 10699<br><span style='color:#666'>Arrival:</span> 11:00<br><span style='color:#666'>Departure:</span> 11:20<br><span style='color:#666'>Leg:</span> 0.00 km, 0 min</div></div>`)[0];
+                popup_a1e00f3b3ae9a7dacabe2d9f08cdebf1.setContent(html_2ca3e55c3eb6ff874344ce06e04b391c);
+            
+        
+
+        marker_90882b00638acbc8d750a1ce6c0891d1.bindPopup(popup_a1e00f3b3ae9a7dacabe2d9f08cdebf1)
+        ;
+
+        
+    
+    
+            marker_90882b00638acbc8d750a1ce6c0891d1.bindTooltip(
+                `<div>
+                     Stop 1: Nandini Bar & Restaurant
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_90882b00638acbc8d750a1ce6c0891d1.setIcon(div_icon_7f9ec37bff726737127055b3fe8ce1ea);
+            
+    
+            var marker_c7baf131ee08090958c0f2ed8f283f13 = L.marker(
+                [12.9895461, 77.7278644],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_7f5d646b667a7f91bbbf8e0ee855932d = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e2\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_aa2c6f360b41390adac4446c33715f4b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a82c075b444063afea40d016c86b19f4 = $(`<div id="html_a82c075b444063afea40d016c86b19f4" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 2: Madhuloka Wines Inorbit Mall Whitefield</b><br><span style='color:#666'>ID:</span> 41595<br><span style='color:#666'>Arrival:</span> 11:28<br><span style='color:#666'>Departure:</span> 11:48<br><span style='color:#666'>Leg:</span> 4.20 km, 8 min</div></div>`)[0];
+                popup_aa2c6f360b41390adac4446c33715f4b.setContent(html_a82c075b444063afea40d016c86b19f4);
+            
+        
+
+        marker_c7baf131ee08090958c0f2ed8f283f13.bindPopup(popup_aa2c6f360b41390adac4446c33715f4b)
+        ;
+
+        
+    
+    
+            marker_c7baf131ee08090958c0f2ed8f283f13.bindTooltip(
+                `<div>
+                     Stop 2: Madhuloka Wines Inorbit Mall Whitefield
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7baf131ee08090958c0f2ed8f283f13.setIcon(div_icon_7f5d646b667a7f91bbbf8e0ee855932d);
+            
+    
+            var marker_43fcc0c9a19b90531ed6f118aee73be9 = L.marker(
+                [13.0127, 77.6476],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_df5c7092abcd197c3b70874b4e511fd8 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e3\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_94179fdf1ab52b15fab83bd36210acfd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7cc5dc6409f4e5eaeb5c4a8a66c4ef71 = $(`<div id="html_7cc5dc6409f4e5eaeb5c4a8a66c4ef71" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 3: Tamrind bar</b><br><span style='color:#666'>ID:</span> 12540<br><span style='color:#666'>Arrival:</span> 12:12<br><span style='color:#666'>Departure:</span> 12:32<br><span style='color:#666'>Leg:</span> 11.79 km, 24 min</div></div>`)[0];
+                popup_94179fdf1ab52b15fab83bd36210acfd.setContent(html_7cc5dc6409f4e5eaeb5c4a8a66c4ef71);
+            
+        
+
+        marker_43fcc0c9a19b90531ed6f118aee73be9.bindPopup(popup_94179fdf1ab52b15fab83bd36210acfd)
+        ;
+
+        
+    
+    
+            marker_43fcc0c9a19b90531ed6f118aee73be9.bindTooltip(
+                `<div>
+                     Stop 3: Tamrind bar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_43fcc0c9a19b90531ed6f118aee73be9.setIcon(div_icon_df5c7092abcd197c3b70874b4e511fd8);
+            
+    
+            var marker_b4e8edbee28550f649fab22103cde61f = L.marker(
+                [12.9772062, 77.64071],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_6b754a6e941abb00f72e6f091722572d = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e4\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_dfd71e6412833d71c31752cc1430ea30 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6005563dc8295826b9da2dc958eff43b = $(`<div id="html_6005563dc8295826b9da2dc958eff43b" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 4: La Cave</b><br><span style='color:#666'>ID:</span> 16305<br><span style='color:#666'>Arrival:</span> 12:42<br><span style='color:#666'>Departure:</span> 13:02<br><span style='color:#666'>Leg:</span> 5.22 km, 10 min</div></div>`)[0];
+                popup_dfd71e6412833d71c31752cc1430ea30.setContent(html_6005563dc8295826b9da2dc958eff43b);
+            
+        
+
+        marker_b4e8edbee28550f649fab22103cde61f.bindPopup(popup_dfd71e6412833d71c31752cc1430ea30)
+        ;
+
+        
+    
+    
+            marker_b4e8edbee28550f649fab22103cde61f.bindTooltip(
+                `<div>
+                     Stop 4: La Cave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b4e8edbee28550f649fab22103cde61f.setIcon(div_icon_6b754a6e941abb00f72e6f091722572d);
+            
+    
+            var marker_5df3ddbd429cbdfb80be27a9c5d177d2 = L.marker(
+                [12.9611245, 77.5999773],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_3ceb304dc2d645aa7af07cd03477a8ae = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e5\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_af2e92e056cd7d913dbaf679b189b6d0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2c4afde5da566b1ca75b9d1782389ee1 = $(`<div id="html_2c4afde5da566b1ca75b9d1782389ee1" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 5: Rajesh Wines</b><br><span style='color:#666'>ID:</span> 11199<br><span style='color:#666'>Arrival:</span> 13:24<br><span style='color:#666'>Departure:</span> 13:44<br><span style='color:#666'>Leg:</span> 6.19 km, 12 min</div></div>`)[0];
+                popup_af2e92e056cd7d913dbaf679b189b6d0.setContent(html_2c4afde5da566b1ca75b9d1782389ee1);
+            
+        
+
+        marker_5df3ddbd429cbdfb80be27a9c5d177d2.bindPopup(popup_af2e92e056cd7d913dbaf679b189b6d0)
+        ;
+
+        
+    
+    
+            marker_5df3ddbd429cbdfb80be27a9c5d177d2.bindTooltip(
+                `<div>
+                     Stop 5: Rajesh Wines
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5df3ddbd429cbdfb80be27a9c5d177d2.setIcon(div_icon_3ceb304dc2d645aa7af07cd03477a8ae);
+            
+    
+            var marker_3b68dd3a2b9335a5c799ec29177fe926 = L.marker(
+                [12.9718287, 77.59594],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_69a0474600f47a89a979886f9407f745 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e6\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_a321e209f0156813c56564e603a01183 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_de53ce208e624481d868bb80a86fb54e = $(`<div id="html_de53ce208e624481d868bb80a86fb54e" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 6: Madhuloka UB City</b><br><span style='color:#666'>ID:</span> 41576<br><span style='color:#666'>Arrival:</span> 14:27<br><span style='color:#666'>Departure:</span> 14:47<br><span style='color:#666'>Leg:</span> 1.65 km, 3 min</div></div>`)[0];
+                popup_a321e209f0156813c56564e603a01183.setContent(html_de53ce208e624481d868bb80a86fb54e);
+            
+        
+
+        marker_3b68dd3a2b9335a5c799ec29177fe926.bindPopup(popup_a321e209f0156813c56564e603a01183)
+        ;
+
+        
+    
+    
+            marker_3b68dd3a2b9335a5c799ec29177fe926.bindTooltip(
+                `<div>
+                     Stop 6: Madhuloka UB City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3b68dd3a2b9335a5c799ec29177fe926.setIcon(div_icon_69a0474600f47a89a979886f9407f745);
+            
+    
+            var marker_101ad314f9aacfda7113b5364aba4060 = L.marker(
+                [13.01287088, 77.55345],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_c59a462aab93ccd6a3c71ff0ca317ef4 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e7\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_50d94443febb921c9ed1ddb0336d86cc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_69b7def9a756241778977e0fc600bec0 = $(`<div id="html_69b7def9a756241778977e0fc600bec0" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 7: Living Liquidz 2</b><br><span style='color:#666'>ID:</span> 19665<br><span style='color:#666'>Arrival:</span> 15:04<br><span style='color:#666'>Departure:</span> 15:24<br><span style='color:#666'>Leg:</span> 8.43 km, 17 min</div></div>`)[0];
+                popup_50d94443febb921c9ed1ddb0336d86cc.setContent(html_69b7def9a756241778977e0fc600bec0);
+            
+        
+
+        marker_101ad314f9aacfda7113b5364aba4060.bindPopup(popup_50d94443febb921c9ed1ddb0336d86cc)
+        ;
+
+        
+    
+    
+            marker_101ad314f9aacfda7113b5364aba4060.bindTooltip(
+                `<div>
+                     Stop 7: Living Liquidz 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_101ad314f9aacfda7113b5364aba4060.setIcon(div_icon_c59a462aab93ccd6a3c71ff0ca317ef4);
+            
+    
+            var marker_37a2be43a31478a8edc35a7f16728165 = L.marker(
+                [13.0349595, 77.5680005],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_86198a474e22eebfe8da4b7ebc56b4d8 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e8\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_c9dc738548e648bb79b62e626fa3db1e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d34b0c07f2d9da0f1658261709630d81 = $(`<div id="html_d34b0c07f2d9da0f1658261709630d81" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 8: Drops Total Spirit New Bel Rd</b><br><span style='color:#666'>ID:</span> 44799<br><span style='color:#666'>Arrival:</span> 15:52<br><span style='color:#666'>Departure:</span> 16:12<br><span style='color:#666'>Leg:</span> 3.79 km, 8 min</div></div>`)[0];
+                popup_c9dc738548e648bb79b62e626fa3db1e.setContent(html_d34b0c07f2d9da0f1658261709630d81);
+            
+        
+
+        marker_37a2be43a31478a8edc35a7f16728165.bindPopup(popup_c9dc738548e648bb79b62e626fa3db1e)
+        ;
+
+        
+    
+    
+            marker_37a2be43a31478a8edc35a7f16728165.bindTooltip(
+                `<div>
+                     Stop 8: Drops Total Spirit New Bel Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_37a2be43a31478a8edc35a7f16728165.setIcon(div_icon_86198a474e22eebfe8da4b7ebc56b4d8);
+            
+    
+            var marker_22601536b453bf6a2d19fea81b0f4b27 = L.marker(
+                [13.0452832, 77.6012691],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_1f2e10f63cfc99fafa46d02c3ae425f9 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e9\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_df88f9bce1d43c832a77f5288b7c2ed7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3c214e8190b9a497e7fccf268a6d4908 = $(`<div id="html_3c214e8190b9a497e7fccf268a6d4908" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 9: SLNS Wine</b><br><span style='color:#666'>ID:</span> 43292<br><span style='color:#666'>Arrival:</span> 16:22<br><span style='color:#666'>Departure:</span> 16:42<br><span style='color:#666'>Leg:</span> 4.92 km, 10 min</div></div>`)[0];
+                popup_df88f9bce1d43c832a77f5288b7c2ed7.setContent(html_3c214e8190b9a497e7fccf268a6d4908);
+            
+        
+
+        marker_22601536b453bf6a2d19fea81b0f4b27.bindPopup(popup_df88f9bce1d43c832a77f5288b7c2ed7)
+        ;
+
+        
+    
+    
+            marker_22601536b453bf6a2d19fea81b0f4b27.bindTooltip(
+                `<div>
+                     Stop 9: SLNS Wine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22601536b453bf6a2d19fea81b0f4b27.setIcon(div_icon_1f2e10f63cfc99fafa46d02c3ae425f9);
+            
+    
+            var marker_d3514518fe51d3b2de879d3565e1e5e1 = L.marker(
+                [13.1386, 77.56978],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_7fed1a3f7a00c9d44144dc98d165e501 = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e10\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_aa862e8ab5217aede39a266b7b31aab7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3c7dc714295346dc6721baddfeb877f7 = $(`<div id="html_3c7dc714295346dc6721baddfeb877f7" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 10: Karma & Kurry - Avalahalli</b><br><span style='color:#666'>ID:</span> 19804<br><span style='color:#666'>Arrival:</span> 17:10<br><span style='color:#666'>Departure:</span> 17:30<br><span style='color:#666'>Leg:</span> 14.20 km, 28 min</div></div>`)[0];
+                popup_aa862e8ab5217aede39a266b7b31aab7.setContent(html_3c7dc714295346dc6721baddfeb877f7);
+            
+        
+
+        marker_d3514518fe51d3b2de879d3565e1e5e1.bindPopup(popup_aa862e8ab5217aede39a266b7b31aab7)
+        ;
+
+        
+    
+    
+            marker_d3514518fe51d3b2de879d3565e1e5e1.bindTooltip(
+                `<div>
+                     Stop 10: Karma & Kurry - Avalahalli
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3514518fe51d3b2de879d3565e1e5e1.setIcon(div_icon_7fed1a3f7a00c9d44144dc98d165e501);
+            
+    
+            var marker_f8384b0698e37bdc885a38cab9d50073 = L.marker(
+                [13.1218867, 77.6309033],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_d0e4385b7bdbd8efdc6ab7e06466467a = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e11\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_d87accda5b44d9b7e774abffee081c7f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cb060ea643173766dcba91ef7af6ee93 = $(`<div id="html_cb060ea643173766dcba91ef7af6ee93" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 11: Drops Baglur</b><br><span style='color:#666'>ID:</span> 44784<br><span style='color:#666'>Arrival:</span> 17:48<br><span style='color:#666'>Departure:</span> 18:08<br><span style='color:#666'>Leg:</span> 8.94 km, 18 min</div></div>`)[0];
+                popup_d87accda5b44d9b7e774abffee081c7f.setContent(html_cb060ea643173766dcba91ef7af6ee93);
+            
+        
+
+        marker_f8384b0698e37bdc885a38cab9d50073.bindPopup(popup_d87accda5b44d9b7e774abffee081c7f)
+        ;
+
+        
+    
+    
+            marker_f8384b0698e37bdc885a38cab9d50073.bindTooltip(
+                `<div>
+                     Stop 11: Drops Baglur
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f8384b0698e37bdc885a38cab9d50073.setIcon(div_icon_d0e4385b7bdbd8efdc6ab7e06466467a);
+            
+    
+            var marker_e2645a14115adaf3f61d6cc56ac3dca4 = L.marker(
+                [13.1995729, 77.7094729],
+                {
+}
+            ).addTo(map_66818ee91a0326ba373bd119b079cd88);
+        
+    
+            var div_icon_e0d201b55b807c1d3b9b2cb91f3e84ee = L.divIcon({
+  "html": "\u003cdiv style=\"background-color:#1976D2;color:white;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;font-weight:bold;font-family:sans-serif;font-size:13px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.4);\"\u003e12\u003c/div\u003e",
+  "iconSize": [28, 28],
+  "iconAnchor": [14, 14],
+  "className": "empty",
+});
+        
+    
+        var popup_2adcbd218cef6730830b9148abc210a2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b4fbe35ac72d6a1a72509e7344832c09 = $(`<div id="html_b4fbe35ac72d6a1a72509e7344832c09" style="width: 100.0%; height: 100.0%;"><div style='font-family:sans-serif;font-size:13px;min-width:200px'><b>Stop 12: Liquor Pot</b><br><span style='color:#666'>ID:</span> 45150<br><span style='color:#666'>Arrival:</span> 18:40<br><span style='color:#666'>Departure:</span> 19:00<br><span style='color:#666'>Leg:</span> 15.76 km, 32 min</div></div>`)[0];
+                popup_2adcbd218cef6730830b9148abc210a2.setContent(html_b4fbe35ac72d6a1a72509e7344832c09);
+            
+        
+
+        marker_e2645a14115adaf3f61d6cc56ac3dca4.bindPopup(popup_2adcbd218cef6730830b9148abc210a2)
+        ;
+
+        
+    
+    
+            marker_e2645a14115adaf3f61d6cc56ac3dca4.bindTooltip(
+                `<div>
+                     Stop 12: Liquor Pot
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e2645a14115adaf3f61d6cc56ac3dca4.setIcon(div_icon_e0d201b55b807c1d3b9b2cb91f3e84ee);
+            
+    
+            map_66818ee91a0326ba373bd119b079cd88.fitBounds(
+                [[12.9611245, 77.55345], [13.1995729, 77.7498641]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
